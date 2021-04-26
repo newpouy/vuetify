@@ -166,6 +166,7 @@ export default baseMixins.extend<options>().extend({
     console.log('mounted')
   },
   beforeDestroy () {
+    alert('죽기싫어~~~~~~')
     console.log('beforeDestroy')
   },
   destroyed () {
@@ -179,6 +180,7 @@ export default baseMixins.extend<options>().extend({
       this.$emit('click', e)
 
       this.btnToggle && this.toggle()
+      this.$destroy()
     },
     genContent (): VNode {
       return this.$createElement('span', {
