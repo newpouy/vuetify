@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 // Styles
 import './VBtn.sass'
 
@@ -142,8 +143,11 @@ export default baseMixins.extend<options>().extend({
       }
     },
   },
-
+  beforeCreate () {
+    console.log('beforeCreate')
+  },
   created () {
+    console.log('created')
     const breakingProps = [
       ['flat', 'text'],
       ['outline', 'outlined'],
@@ -155,9 +159,21 @@ export default baseMixins.extend<options>().extend({
       if (this.$attrs.hasOwnProperty(original)) breaking(original, replacement, this)
     })
   },
-
+  beforeMount () {
+    console.log('beforeMount')
+  },
+  mounted () {
+    console.log('mounted')
+  },
+  beforeDestroy () {
+    console.log('beforeDestroy')
+  },
+  destroyed () {
+    console.log('destroyed')
+  },
   methods: {
     click (e: MouseEvent): void {
+      console.log('in click')
       // TODO: Remove this in v3
       !this.retainFocusOnClick && !this.fab && e.detail && this.$el.blur()
       this.$emit('click', e)
