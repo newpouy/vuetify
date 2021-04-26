@@ -13,5 +13,23 @@
     components: {
       Playground,
     },
+      beforeCreate() {
+      console.log('beforeCreate App')
+    },
+    created() {
+      console.log('created App')
+    },
+    beforeMount() {
+      console.log('beforeMount App')
+    },
+    mounted() {
+      console.log('mounted App')
+    },
+    beforeDestroy() {
+      console.log('beforeDestroy App')
+    },
+    destroyed() {
+      console.log('destroyed App')
+    }
   }
 </script>
